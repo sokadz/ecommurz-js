@@ -5,6 +5,10 @@ import useStyles from './styles';
 function CartItem({ item, onUpdateCartQty, onRemoveFromCart }) {
     const classes = useStyles();
 
+    const handleUpdateCartQty = (lineItemId, newQuantity) => onUpdateCartQty(lineItemId, newQuantity);
+
+    const handleRemoveFromCart = (lineItemId) => onRemoveFromCart(lineItemId);
+
     return (
         <Card>
             <CardMedia image={item.media.source} alt={item.name} className={classes.media} />
